@@ -1,0 +1,16 @@
+.search {
+    position: absolute;
+    top: 35px;
+    left: 25%;
+    width: 100vw;                
+}
+
+.search > button {
+    position: absolute;
+    left:0;
+    top: 340px;
+    text-transform: inherit !important;
+    background-color: #78cfba;
+    color: white;
+    width: 579px;
+}

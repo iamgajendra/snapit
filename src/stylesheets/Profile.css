@@ -1,0 +1,57 @@
+.mainContainer {
+    margin-top: 80px !important;
+    margin-bottom: 120px !important;
+    width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.4);
+}
+
+.profileContainer {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.cardRoot {
+    max-width: 400px;
+    display: flex;
+    background-color: aquamarine;
+}
+
+.profilePhoto {
+    border-radius: 10px;
+}
+
+.profileInfo {
+    padding-left: 20px;
+    margin-top: 90px;
+}
+
+.myWork {
+    text-align: center;
+}
+
+h2 {
+    padding-bottom: 20px;
+}
+
+h4 {
+    padding-bottom: 15px;
+    font-weight: 400;
+}
+
+.image-gallery {
+    max-width: 1000px;
+    margin: auto;
+}
+
+hr {
+    width: 1000px;
+    margin: auto;
+    margin-bottom: 20px;
+    opacity: .3;
+    /* text-align: center; */
+}

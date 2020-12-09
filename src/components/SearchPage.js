@@ -1,20 +1,41 @@
 import { Button } from "@material-ui/core";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../stylesheets/SearchPage.css";
 import SearchResult from "./SearchResult";
-import { Photographers } from "../utils/data";
+import getData from "../utils/fetchData";
 
 const SearchPage = () => {
-  let photographers = Photographers;
+  const photographers = getData();
+  const [data, setData] = useState([]);
+  const [sortType, setSortType] = useState("price");
+
+  useEffect(() => {
+    const sortArray = (type) => {
+      const types = {
+        price: "price",
+        star: "star",
+      };
+      const sortProperty = types[type];
+      const sorted = [...photographers].sort(
+        (a, b) => b[sortProperty] - a[sortProperty]
+      );
+      setData(sorted);
+    };
+    sortArray(sortType);
+  }, [sortType]);
   return (
     <div className="searchPage">
       <div className="searchPage__info">
         <p></p>
         <h1>Photographers nearby</h1>
-        <Button variant="outlined">Price</Button>
-        <Button variant="outlined">Rating</Button>
+        <Button variant="outlined" onClick={() => setSortType("price")}>
+          Price
+        </Button>
+        <Button variant="outlined" onClick={() => setSortType("star")}>
+          Rating
+        </Button>
       </div>
-      {photographers.map((photographer, index) => {
+      {data.map((photographer, index) => {
         return (
           <SearchResult
             key={index}

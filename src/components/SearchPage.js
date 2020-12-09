@@ -7,7 +7,7 @@ import getData from "../utils/fetchData";
 const SearchPage = () => {
   const photographers = getData();
   const [data, setData] = useState([]);
-  const [sortType, setSortType] = useState("price");
+  const [sortType, setSortType] = useState("star");
 
   useEffect(() => {
     const sortArray = (type) => {

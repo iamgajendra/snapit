@@ -2,10 +2,10 @@ import { Button } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import "../stylesheets/SearchPage.css";
 import SearchResult from "./SearchResult";
-import { Photographers } from "../utils/data";
+import getData from "../utils/fetchData";
 
 const SearchPage = () => {
-  const photographers = Photographers;
+  const photographers = getData();
   const [data, setData] = useState([]);
   const [sortType, setSortType] = useState("price");
 
@@ -23,7 +23,6 @@ const SearchPage = () => {
     };
     sortArray(sortType);
   }, [sortType]);
-
   return (
     <div className="searchPage">
       <div className="searchPage__info">

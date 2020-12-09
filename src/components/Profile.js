@@ -1,4 +1,4 @@
-import { Avatar, Button, Card, CardMedia } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "../stylesheets/Profile.css";
@@ -28,7 +28,6 @@ const Profile = () => {
   const [description, setDescription] = useState();
   const [star, setStar] = useState();
   const [price, setPrice] = useState();
-  const [total, setTotal] = useState();
 
   useEffect(() => {
     setImg(location.state.image);
@@ -37,9 +36,7 @@ const Profile = () => {
     setDescription(location.state.description);
     setStar(location.state.star);
     setPrice(location.state.price);
-    setTotal(location.state.total);
   }, [location]);
-  // console.log(title);
   return (
     <div className="mainContainer">
       <div className="profileContainer">
@@ -48,6 +45,8 @@ const Profile = () => {
           <div className="profileInfo">
             <h2>{title}</h2>
             <h4>Services Offerred: {description}</h4>
+            <h4>Locations: {location_}</h4>
+            <h4>Rating: {star}</h4>
             <h4>Price: ₹{price}/day</h4>
             <Button
               className="getInTouchBTN"

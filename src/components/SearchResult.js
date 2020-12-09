@@ -12,6 +12,7 @@ const SearchResult = ({
   price,
   total,
 }) => {
+  // console.log(img)l
   return (
     <div className="searchResult">
       <img src={img} alt="" />
@@ -32,7 +33,7 @@ const SearchResult = ({
             </p>
           </div>
           <div className="searchResult__price">
-            <h2>{price}</h2>
+            <h2>₹{price}/day</h2>
             <p>{total}</p>
           </div>
         </div>

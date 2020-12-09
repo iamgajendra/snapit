@@ -2,6 +2,8 @@ import React from "react";
 import "../stylesheets/SearchResult.css";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import StarIcon from "@material-ui/icons/Star";
+import { useHistory } from "react-router-dom";
+import Profile from "./Profile";
 
 const SearchResult = ({
   img,
@@ -12,9 +14,25 @@ const SearchResult = ({
   price,
   total,
 }) => {
-  // console.log(img)l
+  // const userData = ;
+  const history = useHistory();
+  function goToProfile() {
+    // Profile(img);
+    history.push({
+      pathname: "/profile",
+      state: {
+        image: img,
+        location: location,
+        title: title,
+        description: description,
+        star: star,
+        price: price,
+        total: total,
+      },
+    });
+  }
   return (
-    <div className="searchResult">
+    <div className="searchResult" onClick={() => goToProfile()}>
       <img src={img} alt="" />
       <FavoriteBorderIcon className="searchResult__heart" />
 
